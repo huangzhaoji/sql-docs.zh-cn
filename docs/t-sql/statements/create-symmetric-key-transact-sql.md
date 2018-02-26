@@ -1,5 +1,5 @@
 ---
-title: "创建非对称密钥 (Transact SQL) |Microsoft 文档"
+title: "创建对称密钥 (Transact SQL) |Microsoft 文档"
 ms.custom: 
 ms.date: 09/12/2017
 ms.prod: sql-non-specified
