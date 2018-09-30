@@ -51,7 +51,7 @@ ms.locfileid: "43074849"
     
 -   事务提交成功后，该事务所做的更改就对系统中的其他事务可见。 有关事务隔离级别的详细信息，请参阅 [SET TRANSACTION ISOLATION LEVEL (Transact-SQL)](../../t-sql/statements/set-transaction-isolation-level-transact-sql.md) 或 [具有内存优化表的事务](../../relational-databases/in-memory-oltp/transactions-with-memory-optimized-tables.md)。    
     
--   提交并不保证持续性。 在事务提交成功并将控制权归还给客户端之前，对应的日志记录会保存到磁盘。    
+-   事务提交保证持续性。 在事务提交成功并将控制权归还给客户端之前，对应的日志记录会保存到磁盘。    
     
 ### <a name="delayed-transaction-durability"></a>延迟事务持续性    
  延迟事务持续性使用向磁盘的异步日志写入来实现。 事务日志记录保留在缓冲区中并在缓冲区充满或发生缓冲区刷新事件时写入磁盘。 延迟事务持续性可能会减少系统中的延迟和争用，因为：    
