@@ -100,7 +100,7 @@ SQL Server 的备份和还原功能是从 Windows 上的 SQL Server 数据库迁
    ![scp 命令](./media/sql-server-linux-migrate-restore-database/scp-command.png)
 
 > [!TIP]
-> 没有为文件传输使用 scp 的替代方法。 一种是使用[Samba](https://help.ubuntu.com/community/Samba)来配置 Windows 和 Linux 之间 SMB 网络共享。 在 Ubuntu 上的演练，请参阅[如何创建网络共享通过 Samba](https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!)。 一旦建立，您可以访问它为网络文件共享从 Windows，如 **\\ \\machinenameorip\\共享**。
+> 除此之外还有其他方法可以使用scp进行文件传输。 一种是使用[Samba](https://help.ubuntu.com/community/Samba)来配置 Windows 和 Linux 之间 SMB 网络共享。 在 Ubuntu 上的演练，请参阅[如何创建网络共享通过 Samba](https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!)。 一旦建立，您可以访问它为网络文件共享从 Windows，如 **\\ \\machinenameorip\\共享**。
 
 ## <a name="move-the-backup-file-before-restoring"></a>在还原之前移动备份文件
 
