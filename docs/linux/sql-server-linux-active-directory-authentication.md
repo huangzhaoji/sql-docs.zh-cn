@@ -196,7 +196,7 @@ ms.locfileid: "53160594"
   > [!NOTE]
   > 下一个步骤使用您[完全合格的域名称](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)。 如果您是在**Azure**，您必须**[创建一个](https://docs.microsoft.com/azure/virtual-machines/linux/portal-create-fqdn)** 在继续操作之前。
 
-1. 在您的域控制器上运行[New ADUser](https://technet.microsoft.com/library/ee617253.aspx) PowerShell 命令来创建一个新的 AD 用户使用永不过期的密码。 本示例名称帐户"mssql，"但该帐户名称可以是您喜欢的任何。 系统将提示您为帐户输入新密码：
+1. 在您的域控制器上运行[New ADUser](https://technet.microsoft.com/library/ee617253.aspx) PowerShell 命令来创建一个新的使用永不过期的 AD 用户密码。 本示例名称帐户"mssql，"但该帐户名称可以是您喜欢的任何。 系统将提示您为帐户输入新密码：
 
    ```PowerShell
    Import-Module ActiveDirectory
@@ -205,9 +205,9 @@ ms.locfileid: "53160594"
    ```
 
    > [!NOTE]
-   > 这样，SQL Server 凭据并不与其他服务使用同一帐户共享是有专门的广告帐户为 SQL Server 安全最佳做法。 但是，您可以重用现有的 AD 帐户如果您愿意，如果您知道该帐户的密码 （所需的下一步生成 keytab 文件）。
+   > 基于安全方面的最佳实践，SQL Server 凭据并不应该与其他服务共享同一帐户，而应该使用专门的AD帐户。 但是，如果您愿意并且知道该帐户的密码，当然可以重用现有的 AD 帐户（这个密码是下一步生成 keytab 文件所需的）。
 
-2. 设置为此帐户使用的 ServicePrincipalName (SPN)`setspn.exe`工具。 SPN 必须完全按照下面的示例中指定的方式进行格式化。 可以找到的完全限定的域名[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]主机通过运行`hostname --all-fqdns`在[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]主机和 TCP 端口应是 1433年，除非您已配置了[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]使用不同的端口号。
+2. 使用`setspn.exe`工具设置此帐户使用的ServicePrincipalName (SPN) 。 SPN 必须完全按照下面的示例中指定的方式进行格式化。 可以找到的完全限定的域名[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]主机通过运行`hostname --all-fqdns`在[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]主机和 TCP 端口应是 1433，除非您已配置了[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]使用不同的端口号。
 
    ```PowerShell
    setspn -A MSSQLSvc/**<fully qualified domain name of host machine>**:**<tcp port>** mssql
