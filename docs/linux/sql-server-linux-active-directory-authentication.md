@@ -233,7 +233,7 @@ ms.locfileid: "53160594"
    > [!NOTE]
    > Spn 可能需要几分钟时间才能传播到你的域，尤其是域较大。 如果收到错误，"kvno:找不到服务器 Kerberos 数据库中时获取凭据的 MSSQLSvc /\*\*\<主机计算机的完全限定的域名\>\*\*:\* \* \<tcp 端口\>\*\*\@CONTOSO.COM"，请等待几分钟然后重试。
 
-2. 创建具有的 keytab 文件**[ktutil](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/ktutil.html)** AD 用户在上一步中创建的。 出现提示时，输入密码的 AD 帐户。
+2. 对上一步创建的AD用户使用ktutil**[ktutil](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/ktutil.html)**创建一个keytab文件。  出现提示时，输入密码的 AD 帐户。
 
    ```bash
    sudo ktutil
